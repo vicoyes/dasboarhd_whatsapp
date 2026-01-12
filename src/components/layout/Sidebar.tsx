@@ -1,21 +1,21 @@
 import { Link, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, 
-  MessageSquare, 
   Megaphone, 
   Users, 
   Settings,
-  Workflow
+  Workflow,
+  UsersRound
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
-  { name: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { name: 'Unified Inbox', href: '/chat', icon: MessageSquare },
-  { name: 'Bulk Campaigns', href: '/campaigns', icon: Megaphone },
-  { name: 'n8n Workflows', href: '/workflows', icon: Workflow },
-  { name: 'Contacts', href: '/contacts', icon: Users },
-  { name: 'Settings', href: '/settings', icon: Settings },
+  { name: 'Panel', href: '/', icon: LayoutDashboard },
+  { name: 'Campañas Masivas', href: '/campaigns', icon: Megaphone },
+  { name: 'Audiencia', href: '/audience', icon: UsersRound },
+  { name: 'Flujos n8n', href: '/workflows', icon: Workflow },
+  { name: 'Contactos', href: '/contacts', icon: Users },
+  { name: 'Configuración', href: '/settings', icon: Settings },
 ];
 
 export function Sidebar() {
@@ -59,7 +59,7 @@ export function Sidebar() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          Help Center
+          Centro de Ayuda
         </button>
       </div>
     </aside>
