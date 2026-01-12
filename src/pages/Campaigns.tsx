@@ -10,19 +10,19 @@ export function Campaigns() {
   const [campaigns] = useState(mockCampaigns);
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-8 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold">Campaigns</h1>
-          <p className="text-gray-600 mt-2">Manage your marketing campaigns</p>
+          <h1 className="text-3xl font-bold">Campañas</h1>
+          <p className="text-gray-600 dark:text-gray-400 mt-2">Gestiona tus campañas de marketing</p>
         </div>
         <Button onClick={() => navigate('/campaigns/build')}>
           <Plus className="h-4 w-4 mr-2" />
-          Create Campaign
+          Crear Campaña
         </Button>
       </div>
 
-      <div className="bg-white rounded-md border">
+      <div className="bg-white dark:bg-sidebar-dark rounded-xl border border-gray-200 dark:border-white/10 shadow-sm overflow-hidden">
         <CampaignTable campaigns={campaigns} />
       </div>
     </div>

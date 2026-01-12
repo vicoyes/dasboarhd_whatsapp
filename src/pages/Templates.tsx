@@ -75,23 +75,43 @@ export function Templates() {
     switch (status) {
       case 'approved':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 flex items-center gap-1">
-            <span className="w-1 h-1 rounded-full bg-current"></span>
+          <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-500/10 px-2 py-0.5 rounded uppercase">
             Aprobado
           </span>
         );
       case 'pending':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 flex items-center gap-1">
-            <span className="w-1 h-1 rounded-full bg-current"></span>
+          <span className="text-xs font-bold text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-500/10 px-2 py-0.5 rounded uppercase">
             Pendiente
           </span>
         );
       case 'rejected':
         return (
-          <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400 flex items-center gap-1">
-            <span className="w-1 h-1 rounded-full bg-current"></span>
+          <span className="text-xs font-bold text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-500/10 px-2 py-0.5 rounded uppercase">
             Rechazado
+          </span>
+        );
+    }
+  };
+
+  const getCategoryBadge = (category: Template['category']) => {
+    switch (category) {
+      case 'Marketing':
+        return (
+          <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded uppercase">
+            Marketing
+          </span>
+        );
+      case 'Utility':
+        return (
+          <span className="text-xs font-bold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded uppercase">
+            Utilidad
+          </span>
+        );
+      case 'Authentication':
+        return (
+          <span className="text-xs font-bold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded uppercase">
+            Autenticación
           </span>
         );
     }
@@ -157,7 +177,9 @@ export function Templates() {
               <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">
                 {template.name}
               </h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">{template.category}</p>
+              <div className="mb-4">
+                {getCategoryBadge(template.category)}
+              </div>
               <div className="bg-gray-50 dark:bg-white/5 rounded-lg p-3 text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
                 {template.content}
               </div>
