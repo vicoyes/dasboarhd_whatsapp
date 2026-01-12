@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+  
+  body {
+    background-color: #f8f5f6;
+    @apply font-display text-slate-900 dark:text-slate-100 transition-colors duration-200;
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .dark body {
+    background-color: #230f11;
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
