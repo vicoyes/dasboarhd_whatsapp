@@ -5,13 +5,15 @@ import {
   Users, 
   Settings,
   Workflow,
-  UsersRound
+  UsersRound,
+  FileText
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: 'Panel', href: '/', icon: LayoutDashboard },
   { name: 'Campañas Masivas', href: '/campaigns', icon: Megaphone },
+  { name: 'Plantillas', href: '/templates', icon: FileText },
   { name: 'Audiencia', href: '/audience', icon: UsersRound },
   { name: 'Flujos n8n', href: '/workflows', icon: Workflow },
   { name: 'Contactos', href: '/contacts', icon: Users },

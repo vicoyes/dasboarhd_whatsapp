@@ -4,6 +4,7 @@ import { TopNav } from './components/layout/TopNav';
 import { Dashboard } from './pages/Dashboard';
 import { Campaigns } from './pages/Campaigns';
 import { BuildCampaign } from './pages/BuildCampaign';
+import { Templates } from './pages/Templates';
 import { Audience } from './pages/Audience';
 import { Contacts } from './pages/Contacts';
 import { Settings } from './pages/Settings';
@@ -17,6 +18,7 @@ function AppContent() {
     if (location.pathname.startsWith('/campaigns')) {
       return location.pathname === '/campaigns/build' ? 'Crear Campaña' : 'Campañas';
     }
+    if (location.pathname === '/templates') return 'Gestor de Plantillas de WhatsApp';
     if (location.pathname === '/audience') return 'Audiencia y Segmentos';
     if (location.pathname === '/contacts') return 'Contactos';
     if (location.pathname === '/settings') return 'Configuración';
@@ -33,6 +35,7 @@ function AppContent() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/campaigns" element={<Campaigns />} />
             <Route path="/campaigns/build" element={<BuildCampaign />} />
+            <Route path="/templates" element={<Templates />} />
             <Route path="/audience" element={<Audience />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/settings" element={<Settings />} />
